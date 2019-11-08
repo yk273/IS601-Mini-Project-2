@@ -1,10 +1,8 @@
 import csv
-import numpy as np
 
 
 class CSVReader:
     data = []
-    float_data = np.array(data, dtype=float)
 
     def __init__(self, filepath):
         self.data = []
