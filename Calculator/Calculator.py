@@ -1,6 +1,6 @@
 from Calculator.Addition import addition
 from Calculator.Subtraction import subtraction
-#from Calculator.Multiplication import multiplication
+from Calculator.Multiplication import multiplication
 #from Calculator.Division import division
 #from Calculator.Square import square
 #from Calculator.Square_Root import square_root
@@ -18,4 +18,8 @@ class Calculator:
 
     def subtract(self, num1, num2):
         self.result = subtraction(num1, num2)
+        return self.result
+
+    def multiply(self, num1, num2):
+        self.result = multiplication(num1, num2)
         return self.result
