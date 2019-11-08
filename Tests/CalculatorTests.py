@@ -11,9 +11,9 @@ class MyTestCase(unittest.TestCase):
         self.assertIsInstance(self.calculator, Calculator)
 
     def test_addition(self):
-        test_data = CSVReader('CalcData/Unit_Test_Addition.csv').data
+        test_data = CSVReader('CalcData/Unit_Test_Addition.csv').float_data
         for row in test_data:
-            result = row['Result']
+            result = (row['Result'])
             self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), result)
             self.assertEqual(self.calculator.result, row['Result'])
 
