@@ -17,6 +17,13 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), result)
             self.assertEqual(self.calculator.result, row['Result'])
 
+    def test_subtraction(self):
+        test_data = CSVReader('CalcData/Unit_Test_Subtraction.csv').float_data
+        for row in test_data:
+            result = row['Result']
+            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), result)
+            self.assertEqual(self.calculator.result, row['Result'])
+
     def test_results_property(self):
         self.assertEqual(self.calculator.result, 0)
 
