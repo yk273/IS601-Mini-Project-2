@@ -1,6 +1,6 @@
 from Calculator.Calculator import Calculator
 from Statistics.PopulationMean import population_mean
-
+from Statistics.Median import median
 
 class Statistics(Calculator):
     data = []
@@ -11,3 +11,8 @@ class Statistics(Calculator):
     def population_mean(self, pop_mean_list):
         self.data = population_mean(pop_mean_list)
         return self.data
+
+    def median(self, median_list):
+        self.data = median(median_list)
+        return self.data
+

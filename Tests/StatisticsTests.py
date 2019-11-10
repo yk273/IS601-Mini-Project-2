@@ -21,6 +21,14 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.statistics.population_mean(row['Values'], result))
             self.assertEqual(self.statistics.result, row['Population_Mean'])
 
+    def test_median(self):
+        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
+        result_data = CSVReader('StatData/Statistics_Results.csv').float_data
+        for row in test_data:
+            result = result_data(row['Median'])
+            self.assertEqual(self.statistics.median(row['Values'], result))
+            self.assertEqual(self.statistics.result, row['Median'])
+
     def test_instantiate_statistical_calculator(self):
         self.assertIsInstance(self.statistics, Statistics)
 
