@@ -29,6 +29,14 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.statistics.median(row['Values'], result))
             self.assertEqual(self.statistics.result, row['Median'])
 
+    def test_mode(self):
+        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
+        result_data = CSVReader('StatData/Statistics_Results.csv').float_data
+        for row in test_data:
+            result = result_data(row['Mode'])
+            self.assertEqual(self.statistics.mode(row['Values'], result))
+            self.assertEqual(self.statistics.result, row['Mode'])
+
     def test_instantiate_statistical_calculator(self):
         self.assertIsInstance(self.statistics, Statistics)
 
