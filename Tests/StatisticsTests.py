@@ -37,6 +37,14 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.statistics.mode(row['Values'], result))
             self.assertEqual(self.statistics.result, row['Mode'])
 
+    def test_population_standard_deviance(self):
+        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
+        result_data = CSVReader('StatData/Statistics_Results.csv').float_data
+        for row in test_data:
+            result = result_data(row['Population_Standard_Deviance'])
+            self.assertAlmostEqual(self.statistics.population_standard_deviance(row['Values'], result))
+            self.assertAlmostEqual(self.statistics.result, row['Population_Standard_Deviance'])
+
     def test_instantiate_statistical_calculator(self):
         self.assertIsInstance(self.statistics, Statistics)
 

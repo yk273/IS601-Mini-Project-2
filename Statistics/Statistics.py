@@ -2,6 +2,7 @@ from Calculator.Calculator import Calculator
 from Statistics.PopulationMean import population_mean
 from Statistics.Median import median
 from Statistics.Mode import mode
+from Statistics.PopulationStandardDeviation import population_standard_deviance
 
 class Statistics(Calculator):
     data = []
@@ -19,5 +20,9 @@ class Statistics(Calculator):
 
     def mode(self, mode_list):
         self.data = mode(mode_list)
+        return self.data
+
+    def mode(self, pop_standard_deviation_list):
+        self.data = population_standard_deviance(pop_standard_deviation_list)
         return self.data
 
