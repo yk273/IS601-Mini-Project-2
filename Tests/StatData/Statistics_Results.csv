@@ -1,2 +1,4 @@
-Population_Mean,Median,Mode,Population_Standard_Deviance
-12,15,15,5.333
+Population_Mean,Median,Mode,Population_Standard_Deviance,Variance,Zscore
+12,15,15,5.333,28.444,5
+
+# zscore value is a placeholder

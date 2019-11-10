@@ -3,6 +3,9 @@ from Statistics.PopulationMean import population_mean
 from Statistics.Median import median
 from Statistics.Mode import mode
 from Statistics.PopulationStandardDeviation import population_standard_deviance
+from Statistics.Variance import variance
+from Statistics.Zscore import zscore
+
 
 class Statistics(Calculator):
     data = []
@@ -22,7 +25,15 @@ class Statistics(Calculator):
         self.data = mode(mode_list)
         return self.data
 
-    def mode(self, pop_standard_deviation_list):
+    def population_standard_deviance(self, pop_standard_deviation_list):
         self.data = population_standard_deviance(pop_standard_deviation_list)
+        return self.data
+
+    def variance(self, variance_list):
+        self.data = variance(variance_list)
+        return self.data
+
+    def zscore(self, zscore_list):
+        self.data = zscore(zscore_list)
         return self.data
 
