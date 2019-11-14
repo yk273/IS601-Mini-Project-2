@@ -1,4 +1,4 @@
 Population_Mean,Median,Mode,Population_Standard_Deviance,Variance,Zscore
-12,15,15,5.333,28.444,5
+12,15,15,5.333,28.444,-1.5,-1.125,0.9375,-0.75,0.5625,0.9375,1.125,1.125,
 
-# zscore value is a placeholder
+# zscore values are from -1.5 on
