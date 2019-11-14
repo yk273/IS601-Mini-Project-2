@@ -1,6 +1,6 @@
 import csv
 from FilePaths.AbsoluteFilePath import absolute_path
-import numpy as np
+#import numpy as np
 
 
 def ClassFactory(class_name, dictionary):
@@ -12,7 +12,7 @@ class CSVReader:
 
     def __init__(self, filepath):
         self.data = []
-        self.float_data = np.array(self.data, dtype=float)
+        #self.float_data = np.array(self.data, dtype=float)
 
         with open(absolute_path(filepath)) as text_data:
             csv_data = csv.DictReader(text_data, delimiter=',')
