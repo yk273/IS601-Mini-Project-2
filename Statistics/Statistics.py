@@ -6,6 +6,8 @@ from Statistics.PopulationStandardDeviation import population_standard_deviance
 from Statistics.Variance import variance
 from Statistics.Zscore import zscore
 
+from CsvReader.CsvReader import CSVReader
+
 
 class Statistics(Calculator):
     data = []
@@ -13,13 +15,13 @@ class Statistics(Calculator):
     def __init__(self):
         super().__init__()
 
-    def population_mean(self, pop_mean_list):
-        self.data = population_mean(pop_mean_list)
-        return self.data
+    def population_mean(self):
+        self.result = population_mean(self.mean_list)
+        return self.result
 
-    def median(self, median_list):
-        self.data = median(median_list)
-        return self.data
+    def median(self):
+        self.result = median(self.median_list)
+        return self.result
 
     def mode(self, mode_list):
         self.data = mode(mode_list)
@@ -36,4 +38,3 @@ class Statistics(Calculator):
     def zscore(self, zscore_list):
         self.data = zscore(zscore_list)
         return self.data
-
