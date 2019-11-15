@@ -124,6 +124,14 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.statistics.P_value(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
+    def test_proportion(self):
+        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
+        # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
+        for row in test_data:
+            result = float(row['Proportion'])
+            self.assertEqual(self.statistics.proportion(row['Values'], result))
+            self.assertEqual(self.statistics.result, result)
+
     def test_instantiate_statistical_calculator(self):
         self.assertIsInstance(self.statistics, Statistics)
 
