@@ -10,6 +10,7 @@ from Statistics.PopulationCorrelationCoefficient import population_correlation_c
 from Statistics.ConfidenceIntervalADD import confidence_interval_ADD
 from Statistics.ConfidenceIntervalSUB import confidence_interval_SUB
 from Statistics.SampleMean import sample_mean
+from Statistics.SampleStandardDeviation import sample_standard_deviance
 from CsvReader.CsvReader import CSVReader
 
 
@@ -61,4 +62,8 @@ class Statistics(Calculator):
 
     def sample_mean(self):
         self.result = sample_mean(self.sample_mean_list)
+        return self.result
+
+    def sample_standard_deviance(self):
+        self.result = sample_standard_deviance(self.sample_standard_deviance_list)
         return self.result

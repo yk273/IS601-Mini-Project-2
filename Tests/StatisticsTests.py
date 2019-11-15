@@ -100,6 +100,14 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.statistics.sample_mean(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
+    def test_sample_standard_deviance(self):
+        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
+        # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
+        for row in test_data:
+            result = float(row['Sample_Standard_Deviance'])
+            self.assertEqual(self.statistics.sample_standard_deviance(row['Values'], result))
+            self.assertEqual(self.statistics.result, result)
+
     def test_instantiate_statistical_calculator(self):
         self.assertIsInstance(self.statistics, Statistics)
 
