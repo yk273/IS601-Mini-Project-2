@@ -6,6 +6,7 @@ from Statistics.PopulationStandardDeviation import population_standard_deviance
 from Statistics.PopulationVariance import population_variance
 from Statistics.Zscore import zscore
 from Statistics.VariancePopulationProportion import variance_population_proportion
+from Statistics.PopulationCorrelationCoefficient import population_correlation_coefficient
 from CsvReader.CsvReader import CSVReader
 
 
@@ -41,4 +42,8 @@ class Statistics(Calculator):
 
     def zscore(self):
         self.result = zscore(self.zscore_list)
+        return self.result
+
+    def population_correlation_coefficient(self):
+        self.result = population_correlation_coefficient(self.population_correlation_coefficient_list)
         return self.result
