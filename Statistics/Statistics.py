@@ -34,8 +34,7 @@ class Statistics(Calculator):
     def population_variance(self):
         self.result = population_variance(self.population_variance_list)
         return self.result
-'''
-    def zscore(self, zscore_list):
-        self.data = zscore(zscore_list)
-        return self.data
-'''
+
+    def zscore(self):
+        self.result = zscore(self.zscore_list)
+        return self.result

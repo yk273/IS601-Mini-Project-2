@@ -51,19 +51,17 @@ class MyTestCase(unittest.TestCase):
             result = float(row['Variance'])
             self.assertAlmostEqual(self.statistics.population_variance(row['Values'], result))
             self.assertAlmostEqual(self.statistics.result, result)
-'''
+
     def test_zscore(self):
         test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').float_data
+        # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
         for row in test_data:
-            result = result_data(row['Zscore'])
-            self.assertEqual(self.statistics.variance(row['Values'], result))
-            self.assertEqual(self.statistics.result, row['Zscore'])
-'''
+            result = float(row['Zscore'])
+            self.assertEqual(self.statistics.zscore(row['Values'], result))
+            self.assertEqual(self.statistics.result, result)
 
-
-def test_instantiate_statistical_calculator(self):
-    self.assertIsInstance(self.statistics, Statistics)
+    def test_instantiate_statistical_calculator(self):
+        self.assertIsInstance(self.statistics, Statistics)
 
 
 if __name__ == '__main__':
