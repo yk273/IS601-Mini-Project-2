@@ -80,8 +80,16 @@ class MyTestCase(unittest.TestCase):
         test_data = CSVReader('StatData/Statistics_Values.csv').float_data
         # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
         for row in test_data:
-            result = float(row['Confidence_Interval'])
+            result = float(row['Confidence_Interval_ADD'])
             self.assertEqual(self.statistics.confidence_interval_ADD(row['Values'], result))
+            self.assertEqual(self.statistics.result, result)
+
+    def test_confidence_interval_SUB(self):
+        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
+        # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
+        for row in test_data:
+            result = float(row['Confidence_Interval_SUB'])
+            self.assertEqual(self.statistics.confidence_interval_SUB(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
     def test_instantiate_statistical_calculator(self):

@@ -8,6 +8,7 @@ from Statistics.Zscore import zscore
 from Statistics.VariancePopulationProportion import variance_population_proportion
 from Statistics.PopulationCorrelationCoefficient import population_correlation_coefficient
 from Statistics.ConfidenceIntervalADD import confidence_interval_ADD
+from Statistics.ConfidenceIntervalSUB import confidence_interval_SUB
 
 from CsvReader.CsvReader import CSVReader
 
@@ -52,5 +53,9 @@ class Statistics(Calculator):
 
     def confidence_interval_ADD(self):
         self.result = confidence_interval_ADD(self.confidence_interval_ADD_list)
+        return self.result
+
+    def confidence_interval_SUB(self):
+        self.result = confidence_interval_SUB(self.confidence_interval_SUB_list)
         return self.result
 
