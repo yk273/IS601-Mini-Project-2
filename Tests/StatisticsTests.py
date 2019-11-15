@@ -20,10 +20,8 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.statistics.population_mean(float(row['Values'])), result)
             self.assertEqual(self.statistics.result, result)
 
-
-'''
     def test_median(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').data
+        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
         # result_data = CSVReader('StatData/Statistics_Results.csv').data
         for row in test_data:
             result = float(row['Median'])
@@ -31,30 +29,29 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.statistics.result, result)
 
     def test_mode(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').data
+        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
         # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
         for row in test_data:
             result = float(row['Mode'])
             self.assertEqual(self.statistics.mode(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
-
     def test_population_standard_deviance(self):
         test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').float_data
+        # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
         for row in test_data:
-            result = result_data(row['Population_Standard_Deviance'])
+            result = float(row['Population_Standard_Deviance'])
             self.assertAlmostEqual(self.statistics.population_standard_deviance(row['Values'], result))
-            self.assertAlmostEqual(self.statistics.result, row['Population_Standard_Deviance'])
+            self.assertAlmostEqual(self.statistics.result, result)
 
     def test_variance(self):
         test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').float_data
+        # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
         for row in test_data:
-            result = result_data(row['Variance'])
+            result = float(row['Variance'])
             self.assertAlmostEqual(self.statistics.variance(row['Values'], result))
-            self.assertAlmostEqual(self.statistics.result, row['Variance'])
-
+            self.assertAlmostEqual(self.statistics.result, result)
+'''
     def test_zscore(self):
         test_data = CSVReader('StatData/Statistics_Values.csv').float_data
         result_data = CSVReader('StatData/Statistics_Results.csv').float_data

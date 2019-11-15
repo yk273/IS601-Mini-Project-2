@@ -23,18 +23,19 @@ class Statistics(Calculator):
         self.result = median(self.median_list)
         return self.result
 
-    def mode(self, mode_list):
-        self.data = mode(mode_list)
-        return self.data
+    def mode(self):
+        self.result = mode(self.mode_list)
+        return self.result
 
-    def population_standard_deviance(self, pop_standard_deviation_list):
-        self.data = population_standard_deviance(pop_standard_deviation_list)
-        return self.data
+    def population_standard_deviance(self):
+        self.result = population_standard_deviance(self.pop_standard_deviation_list)
+        return self.result
 
-    def variance(self, variance_list):
-        self.data = variance(variance_list)
-        return self.data
-
+    def variance(self):
+        self.result = variance(self.variance_list)
+        return self.result
+'''
     def zscore(self, zscore_list):
         self.data = zscore(zscore_list)
         return self.data
+'''
