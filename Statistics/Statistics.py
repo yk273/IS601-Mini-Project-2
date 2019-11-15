@@ -5,7 +5,7 @@ from Statistics.Mode import mode
 from Statistics.PopulationStandardDeviation import population_standard_deviance
 from Statistics.PopulationVariance import population_variance
 from Statistics.Zscore import zscore
-
+from Statistics.VariancePopulationProportion import variance_population_proportion
 from CsvReader.CsvReader import CSVReader
 
 
@@ -29,6 +29,10 @@ class Statistics(Calculator):
 
     def population_standard_deviance(self):
         self.result = population_standard_deviance(self.pop_standard_deviation_list)
+        return self.result
+
+    def variance_population_proportion(self):
+        self.result = variance_population_proportion(self.variance_population_proportion_list)
         return self.result
 
     def population_variance(self):
