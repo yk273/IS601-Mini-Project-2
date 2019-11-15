@@ -9,6 +9,7 @@ from Statistics.VariancePopulationProportion import variance_population_proporti
 from Statistics.PopulationCorrelationCoefficient import population_correlation_coefficient
 from Statistics.ConfidenceIntervalADD import confidence_interval_ADD
 from Statistics.ConfidenceIntervalSUB import confidence_interval_SUB
+from Statistics.SampleMean import sample_mean
 from CsvReader.CsvReader import CSVReader
 
 
@@ -58,4 +59,6 @@ class Statistics(Calculator):
         self.result = confidence_interval_SUB(self.confidence_interval_SUB_list)
         return self.result
 
-
+    def sample_mean(self):
+        self.result = sample_mean(self.sample_mean_list)
+        return self.result
