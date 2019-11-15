@@ -44,12 +44,12 @@ class MyTestCase(unittest.TestCase):
             self.assertAlmostEqual(self.statistics.population_standard_deviance(row['Values'], result))
             self.assertAlmostEqual(self.statistics.result, result)
 
-    def test_variance(self):
+    def test_population_variance(self):
         test_data = CSVReader('StatData/Statistics_Values.csv').float_data
         # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
         for row in test_data:
             result = float(row['Variance'])
-            self.assertAlmostEqual(self.statistics.variance(row['Values'], result))
+            self.assertAlmostEqual(self.statistics.population_variance(row['Values'], result))
             self.assertAlmostEqual(self.statistics.result, result)
 '''
     def test_zscore(self):
