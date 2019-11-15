@@ -11,6 +11,8 @@ from Statistics.ConfidenceIntervalADD import confidence_interval_ADD
 from Statistics.ConfidenceIntervalSUB import confidence_interval_SUB
 from Statistics.SampleMean import sample_mean
 from Statistics.SampleStandardDeviation import sample_standard_deviance
+from Statistics.VarianceSampleProportion import variance_sample_proportion
+from Statistics.P_Value import P_value
 from CsvReader.CsvReader import CSVReader
 
 
@@ -66,4 +68,12 @@ class Statistics(Calculator):
 
     def sample_standard_deviance(self):
         self.result = sample_standard_deviance(self.sample_standard_deviance_list)
+        return self.result
+
+    def variance_sample_proportion(self):
+        self.result = variance_sample_proportion(self.variance_sample_proportion_list)
+        return self.result
+
+    def P_value(self):
+        self.result = P_value(self.P_value_list)
         return self.result
