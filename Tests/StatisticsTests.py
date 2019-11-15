@@ -68,7 +68,6 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.statistics.zscore(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
-
     def test_instantiate_statistical_calculator(self):
         self.assertIsInstance(self.statistics, Statistics)
 
