@@ -6,8 +6,4 @@ from Statistics.PopulationStandardDeviation import population_standard_deviance
 
 
 def zscore(zscore_list):
-    num_values = len(zscore_list)
-    total = 0
-    for num in zscore_list:
-        total = addition(total, num)
-    return division((subtraction(zscore_list, num_values)), population_standard_deviance(zscore_list))
+    return division((subtraction(zscore_list, population_mean(zscore_list))), population_standard_deviance(zscore_list))
