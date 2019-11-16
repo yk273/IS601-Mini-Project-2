@@ -4,6 +4,10 @@
 * Yana Kokit
 * Michelle Remmett
 
+### Mini Project 1 Update
+
+[Mini Project 1 Link](https://github.com/yk273/IS601-Mini-Project-1.git)
+
 ### Project Description
 Create a statistical calculator with the following functions:
 - [x] Population Mean
