@@ -14,6 +14,7 @@ from Statistics.SampleStandardDeviation import sample_standard_deviance
 from Statistics.VarianceSampleProportion import variance_sample_proportion
 from Statistics.P_Value import P_value
 from Statistics.Proportion import proportion
+from Statistics.Num_Values import num_values
 from CsvReader.CsvReader import CSVReader
 
 
@@ -80,5 +81,9 @@ class Statistics(Calculator):
         return self.result
 
     def proportion(self):
-        self.result = proportion(self.proportion.list)
+        self.result = proportion(self.proportion_list)
+        return self.result
+
+    def num_values(self):
+        self.result = num_values(self.proportion.list)
         return self.result
