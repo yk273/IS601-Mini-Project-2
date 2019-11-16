@@ -1,4 +1,10 @@
-Population_Mean,Median,Mode,Population_Standard_Deviance,Variance,Zscore
-12,15,15,5.333,28.444,-1.5,-1.125,0.9375,-0.75,0.5625,0.9375,1.125,1.125,
-
-# zscore values are from -1.5 on
+Population_Mean,Median,Mode,Population_Standard_Deviance,Variance_Population_Proportions,Population_Variance,Zscores,Population_Correlation_Coefficient,Confidence_Interval_ADD,Confidence_Interval_SUB,Num_Values,,
+12,15,15,5.3333,3.8297,28.4444,0.5625,0,12.99999375,11.00000625,9,1.125,1.125
+,,,,,,0.5625,,12.99999375,11.00000625,,,
+,,,,,,1.125,,13.9999875,10.0000125,,,
+,,,,,,0.9375,,13.66665625,10.33334375,,,
+,,,,,,-0.9375,,10.33334375,13.66665625,,,
+,,,,,,-0.75,,10.666675,13.333325,,,
+,,,,,,1.125,,13.9999875,10.0000125,,,
+,,,,,,-1.125,,10.0000125,13.9999875,,,
+,,,,,,-1.5,,9.33335,14.66665,,,
