@@ -27,7 +27,7 @@ Create a statistical calculator with the following functions:
 - [x] Variance of sample proportion
 
 ### Requirements
-- [ ] You must submit a link to your Github for Mini Project 1 (updated terms) and 2 (statistical calculator)
+- [x] You must submit a link to your Github for Mini Project 1 (updated terms) and 2 (statistical calculator)
 - [ ] You must submit a link to Travis CI running your tests successfully
 - [ ] You must put a travis CI build status on your Readme.MD file
 - [x] You must have commits labeled feature, fix, or task
