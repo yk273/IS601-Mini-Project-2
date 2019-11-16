@@ -92,38 +92,6 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.statistics.confidence_interval_SUB(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
-    def test_sample_mean(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
-        for row in test_data:
-            result = float(row['Sample_Mean'])
-            self.assertEqual(self.statistics.sample_mean(row['Values'], result))
-            self.assertEqual(self.statistics.result, result)
-
-    def test_sample_standard_deviance(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
-        for row in test_data:
-            result = float(row['Sample_Standard_Deviance'])
-            self.assertEqual(self.statistics.sample_standard_deviance(row['Values'], result))
-            self.assertEqual(self.statistics.result, result)
-
-    def test_variance_sample_proportion(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
-        for row in test_data:
-            result = float(row['Variation_Sample_Proportion'])
-            self.assertEqual(self.statistics.variance_sample_proportion(row['Values'], result))
-            self.assertEqual(self.statistics.result, result)
-
-    def test_P_value(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
-        for row in test_data:
-            result = float(row['P_Value'])
-            self.assertEqual(self.statistics.P_value(row['Values'], result))
-            self.assertEqual(self.statistics.result, result)
-
     def test_proportion(self):
         test_data = CSVReader('StatData/Statistics_Values.csv').float_data
         # result_data = CSVReader('StatData/Statistics_Results.csv').float_data
@@ -142,6 +110,10 @@ class MyTestCase(unittest.TestCase):
 
     def test_instantiate_statistical_calculator(self):
         self.assertIsInstance(self.statistics, Statistics)
+
+# sample mean, sample standard deviation, variance of sample proportion, and P-value cannot be tested
+# all of these calculations require a sample population
+#  this is due to the random package in the GetSample module
 
 
 if __name__ == '__main__':
