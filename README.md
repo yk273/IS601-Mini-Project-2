@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/yk273/IS601-Mini-Project-2.svg?branch=master)](https://travis-ci.com/yk273/IS601-Mini-Project-2)
+
+
 # IS601-Mini-Project-2
 
 ### Group Members
@@ -28,8 +31,8 @@ Create a statistical calculator with the following functions:
 
 ### Requirements
 - [x] You must submit a link to your Github for Mini Project 1 (updated terms) and 2 (statistical calculator)
-- [ ] You must submit a link to Travis CI running your tests successfully
-- [ ] You must put a travis CI build status on your Readme.MD file
+- [x] You must submit a link to Travis CI running your tests successfully
+- [x] You must put a travis CI build status on your Readme.MD file
 - [x] You must have commits labeled feature, fix, or task
 - [ ] You must not repeat yourself
 - [x] You need a module for reading CSV files
