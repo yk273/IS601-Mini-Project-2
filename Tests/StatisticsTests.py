@@ -1,6 +1,7 @@
 import unittest
 from Statistics.Statistics import Statistics
 from CsvReader.CsvReader import CSVReader
+from CsvReader.TestData import test_data_values
 
 
 class MyTestCase(unittest.TestCase):
@@ -14,8 +15,8 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.statistics.data, [])
 
     def test_population_mean(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        for row in test_data:
+        #test_data = CSVReader('StatData/Statistics_Values.csv').float_data
+        for row in test_data_values:
             result = float(row['Population_Mean'])
             self.assertEqual(self.statistics.population_mean(float(row['Values'])), result)
             self.assertEqual(self.statistics.result, result)

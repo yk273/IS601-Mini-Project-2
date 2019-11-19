@@ -92,3 +92,8 @@ class Statistics(Calculator):
     def get_sample(self):
         self.result = getSample(self.data, self.sample_size)
         return self.result
+'''
+    def test_data_values(self):
+        self.result = ......(self.......)
+       return self.result
+'''
