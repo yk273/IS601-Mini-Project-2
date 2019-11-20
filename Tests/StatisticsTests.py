@@ -95,10 +95,9 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.statistics.result, result)
 
     def test_get_sample(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
         expected_range = range(5, 6)
-        for row in test_data:
-            result = float(row['Values']).getSample(test_data, sample_size=self.sample_size)
+        for row in test_data_values({}):
+            result = float(row['Values']).getSample(test_data_values, sample_size=self.sample_size)
             self.assertIn(result, expected_range)
 
     def test_instantiate_statistical_calculator(self):
