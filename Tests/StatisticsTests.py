@@ -4,8 +4,6 @@ from CsvReader.TestDataResults import test_data_results
 from Statistics.Statistics import Statistics
 from CsvReader.CsvReader import CSVReader
 
-# from CsvReader.CSVFiles import CSVFiles
-
 
 class MyTestCase(unittest.TestCase):
 
