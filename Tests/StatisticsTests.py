@@ -25,49 +25,49 @@ class MyTestCase(unittest.TestCase):
     def test_population_mean(self):
         for row in test_data_values({}):
             result = test_data_results.float(row['Population_Mean'])
-            self.assertEqual(self.statistics.population_mean(float(row['Values'])), result)
+            self.assertEqual(self.statistics.population_mean((row['Values']), result))
             self.assertEqual(self.statistics.result, result)
 
     def test_median(self):
         for row in test_data_values({}):
             result = test_data_results.float(row['Median'])
-            self.assertEqual(self.statistics.median(float(row['Values'])), result)
+            self.assertEqual(self.statistics.median((row['Values']), result))
             self.assertEqual(self.statistics.result, result)
 
     def test_mode(self):
         for row in test_data_values({}):
             result = test_data_results.float(row['Mode'])
-            self.assertEqual(self.statistics.mode(row['Values'], result))
+            self.assertEqual(self.statistics.mode((row['Values']), result))
             self.assertEqual(self.statistics.result, result)
 
     def test_population_standard_deviance(self):
         for row in test_data_values({}):
             result = test_data_results.float(row['Population_Standard_Deviance'])
-            self.assertAlmostEqual(self.statistics.population_standard_deviance(row['Values'], result))
+            self.assertAlmostEqual(self.statistics.population_standard_deviance((row['Values']), result))
             self.assertAlmostEqual(self.statistics.result, result)
 
     def test_variance_population_proportion(self):
         for row in test_data_values({}):
             result = test_data_results.float(row['Variance_Population_Proportion'])
-            self.assertEqual(self.statistics.variance_population_proportion(row['Values'], result))
+            self.assertEqual(self.statistics.variance_population_proportion((row['Values']), result))
             self.assertEqual(self.statistics.result, result)
 
     def test_population_variance(self):
         for row in test_data_values({}):
             result = test_data_results.float(row['Variance'])
-            self.assertAlmostEqual(self.statistics.population_variance(row['Values'], result))
+            self.assertAlmostEqual(self.statistics.population_variance((row['Values']), result))
             self.assertAlmostEqual(self.statistics.result, result)
 
     def test_zscore(self):
         for row in test_data_values({}):
             result = test_data_results.float(row['Zscore'])
-            self.assertEqual(self.statistics.zscore(row['Values'], result))
+            self.assertEqual(self.statistics.zscore((row['Values']), result))
             self.assertEqual(self.statistics.result, result)
 
     def test_population_correlation_coefficient(self):
         for row in test_data_values({}):
             result = test_data_results.float(row['Population_Correlation_Coefficient'])
-            self.assertEqual(self.statistics.population_correlation_coefficient(row['Values'], result))
+            self.assertEqual(self.statistics.population_correlation_coefficient((row['Values']), result))
             self.assertEqual(self.statistics.result, result)
 
     def test_confidence_interval_ADD(self):
@@ -79,19 +79,19 @@ class MyTestCase(unittest.TestCase):
     def test_confidence_interval_SUB(self):
         for row in test_data_values({}):
             result = test_data_results.float(row['Confidence_Interval_SUB'])
-            self.assertEqual(self.statistics.confidence_interval_SUB(row['Values'], result))
+            self.assertEqual(self.statistics.confidence_interval_SUB((row['Values']), result))
             self.assertEqual(self.statistics.result, result)
 
     def test_proportion(self):
         for row in test_data_values({}):
             result = test_data_results.float(row['Proportion'])
-            self.assertEqual(self.statistics.proportion(row['Values'], result))
+            self.assertEqual(self.statistics.proportion((row['Values']), result))
             self.assertEqual(self.statistics.result, result)
 
     def test_num_values(self):
         for row in test_data_values({}):
             result = test_data_results.float(row['Num_Values'])
-            self.assertEqual(self.statistics.num_values(row['Values'], result))
+            self.assertEqual(self.statistics.num_values((row['Values']), result))
             self.assertEqual(self.statistics.result, result)
 
     def test_get_sample(self):
