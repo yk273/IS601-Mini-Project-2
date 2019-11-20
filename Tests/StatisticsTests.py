@@ -1,12 +1,22 @@
 import unittest
+from CsvReader.TestData import test_data_values
+from CsvReader.TestDataResults import test_data_results
 from Statistics.Statistics import Statistics
 from CsvReader.CsvReader import CSVReader
-from CsvReader.TestData import test_data_values
+
+# from CsvReader.CSVFiles import CSVFiles
 
 
 class MyTestCase(unittest.TestCase):
+
     def setUp(self) -> None:
         self.statistics = Statistics()
+        self.test_data_values = CSVReader('StatData/Statistics_Values.csv').float_data
+        self.test_data_results = CSVReader('StatData/Statistics_Results.csv').float_data
+
+    def getUp(self) -> None:
+        return self.test_data_values
+        return self.test_data_results
 
     def test_instantiate_statistics_calculator(self):
         self.assertIsInstance(self.statistics, Statistics)
@@ -15,98 +25,74 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.statistics.data, [])
 
     def test_population_mean(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').data
-        for row in test_data:
-            result = result_data.float(row['Population_Mean'])
+        for row in test_data_values({}):
+            result = test_data_results.float(row['Population_Mean'])
             self.assertEqual(self.statistics.population_mean(float(row['Values'])), result)
             self.assertEqual(self.statistics.result, result)
 
     def test_median(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').data
-        for row in test_data:
-            result = result_data.result_data.float(row['Median'])
+        for row in test_data_values({}):
+            result = test_data_results.float(row['Median'])
             self.assertEqual(self.statistics.median(float(row['Values'])), result)
             self.assertEqual(self.statistics.result, result)
 
     def test_mode(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').data
-        for row in test_data:
-            result = result_data.float(row['Mode'])
+        for row in test_data_values({}):
+            result = test_data_results.float(row['Mode'])
             self.assertEqual(self.statistics.mode(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
     def test_population_standard_deviance(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').data
-        for row in test_data:
-            result = result_data.float(row['Population_Standard_Deviance'])
+        for row in test_data_values({}):
+            result = test_data_results.float(row['Population_Standard_Deviance'])
             self.assertAlmostEqual(self.statistics.population_standard_deviance(row['Values'], result))
             self.assertAlmostEqual(self.statistics.result, result)
 
     def test_variance_population_proportion(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').data
-        for row in test_data:
-            result = result_data.float(row['Variance_Population_Proportion'])
+        for row in test_data_values({}):
+            result = test_data_results.float(row['Variance_Population_Proportion'])
             self.assertEqual(self.statistics.variance_population_proportion(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
     def test_population_variance(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').data
-        for row in test_data:
-            result = result_data.float(row['Variance'])
+        for row in test_data_values({}):
+            result = test_data_results.float(row['Variance'])
             self.assertAlmostEqual(self.statistics.population_variance(row['Values'], result))
             self.assertAlmostEqual(self.statistics.result, result)
 
     def test_zscore(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').data
-        for row in test_data:
-            result = result_data.float(row['Zscore'])
+        for row in test_data_values({}):
+            result = test_data_results.float(row['Zscore'])
             self.assertEqual(self.statistics.zscore(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
     def test_population_correlation_coefficient(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').data
-        for row in test_data:
-            result = result_data.float(row['Population_Correlation_Coefficient'])
+        for row in test_data_values({}):
+            result = test_data_results.float(row['Population_Correlation_Coefficient'])
             self.assertEqual(self.statistics.population_correlation_coefficient(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
     def test_confidence_interval_ADD(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').data
-        for row in test_data:
-            result = result_data.float(row['Confidence_Interval_ADD'])
+        for row in test_data_values({}):
+            result = test_data_results.float(row['Confidence_Interval_ADD'])
             self.assertEqual(self.statistics.confidence_interval_ADD(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
     def test_confidence_interval_SUB(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').data
-        for row in test_data:
-            result = result_data.float(row['Confidence_Interval_SUB'])
+        for row in test_data_values({}):
+            result = test_data_results.float(row['Confidence_Interval_SUB'])
             self.assertEqual(self.statistics.confidence_interval_SUB(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
     def test_proportion(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').data
-        for row in test_data:
-            result = result_data.float(row['Proportion'])
+        for row in test_data_values({}):
+            result = test_data_results.float(row['Proportion'])
             self.assertEqual(self.statistics.proportion(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
     def test_num_values(self):
-        test_data = CSVReader('StatData/Statistics_Values.csv').float_data
-        result_data = CSVReader('StatData/Statistics_Results.csv').data
-        for row in test_data:
-            result = result_data.float(row['Num_Values'])
+        for row in test_data_values({}):
+            result = test_data_results.float(row['Num_Values'])
             self.assertEqual(self.statistics.num_values(row['Values'], result))
             self.assertEqual(self.statistics.result, result)
 
@@ -119,6 +105,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_instantiate_statistical_calculator(self):
         self.assertIsInstance(self.statistics, Statistics)
+
 
 # sample mean, sample standard deviation, variance of sample proportion, and P-value cannot be tested
 # all of these calculations require a sample population
